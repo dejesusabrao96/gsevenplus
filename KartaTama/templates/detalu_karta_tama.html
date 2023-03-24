@@ -1,0 +1,221 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="tables">   
+<div class="container-fluid">
+  <header> 
+            <ol class="breadcrumb mb-1 mt-1">
+              <li class="breadcrumb-item"><a href="{% url 'index' %}">Varanda</a></li>
+              
+              <li class="breadcrumb-item"><a href="{% url 'listakartatama' %}">Lista Karta Tama</a></li>
+              
+              <!-- <li class="breadcrumb-item active" aria-current="page">{{title}}</li> -->
+            </ol>
+          </header>
+                    {% if messages %}
+                        {% for message in messages %} 
+                            <div id="divmessage" class="alert alert-{{ message.tags }} alert-dismissable">
+                              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                              {{message}}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+<div class="row">
+<div class="col-sm-9">
+	<div class="card">
+		<div class="card-header d-flex justify-content-between">
+			<h4>Detallu {{dokumentu.subject_karta_tama}} Tama<i><u class="text-light bg-danger m-2 p-1">{{dokumentu.nu_karta_tama}}</u></i></h4>
+		</div>
+		<div class="card-body">
+			<div class="col-lg-12 mb-1 mb-1" style="color: #fff;background: #b5b9bd">
+				<label>Asuntu Karta : </label>
+			</div>
+			<p class="editable" data-id="{{dokumentu.id}}" data-type="subject_karta_tama">{{dokumentu.subject_karta_tama}}</p>
+      <div class="col-lg-12 mb-1 mb-1" style="color: #fff;background: #b5b9bd">
+        <label>Deskrisaun Karta : </label>
+      </div>
+      <p class="editable" data-id="{{dokumentu.id}}" data-type="deskrisaun_karta_tama">{{dokumentu.deskrisaun_karta_tama}}</p>
+			<div class="col-lg-12 mb-1" style="color: #fff;background: #b5b9bd">
+				<label>Data Tama : </label>
+			</div>
+			<p class="editable" data-id="{{dokumentu.id}}" data-type="data_karta_tama">{{dokumentu.data_karta_tama}}</p>
+      <div class="col-lg-12 mb-1" style="color: #fff;background: #b5b9bd">
+        <label>Orijen Karta : </label>
+      </div>
+      <p class="editable" data-id="{{dokumentu.id}}" data-type="orijen_karta_tama">{{dokumentu.orijen_karta_tama}}</p>
+																						
+      <div class="col-lg-12 mb-1" style="color: #fff;background: #b5b9bd">
+        <label>Entrega husi : </label>
+      </div>
+      <p class="editable" data-id="{{dokumentu.id}}" data-type="entrega_husi">{{dokumentu.entrega_husi}}</p>
+
+      <div class="col-lg-12 mb-1" style="color: #fff;background: #b5b9bd">
+        <label>Klasifikasaun Karta : </label>
+      </div>
+      <p class="editable" data-id="{{dokumentu.id}}" data-type="klasifikasaun">{{dokumentu.klasifikasaun}}</p>
+
+      <div class="col-lg-12 mb-1" style="color: #fff;background: #b5b9bd">
+        <label>Kategoria Karta : </label>
+      </div>
+      <p class="editable" data-id="{{dokumentu.id}}" data-type="kategoria_karta_tama">{{dokumentu.kategoria_karta_tama}}</p>
+			
+			
+			<br>
+			<br>
+	<div class="panel-body">
+	<div class="row">
+		<div class="col-lg-12">
+		<div class="panel mb-4">
+                <div class="panel-body" style="height:500px">
+			<div id="pdfviewer" style="height:100%"></div>
+		</div>
+        </div>
+		</div>
+		
+	</div>
+    </div>
+	</div>
+	<!-- //end card for pdf viewer -->
+	<link rel="stylesheet" type="text/css" href="{% static '/main/css/bootstrap.min.css' %}">
+
+	<script src="{% static '/main/js/pdfobject.js' %}"></script>
+	<script>PDFObject.embed("{% static '' %}{{dokumentu.naran_file}}", "#pdfviewer");</script>
+
+			
+															
+		</div>
+	</div>
+	<div class="col-lg-3">
+		<div class="card">
+			<div class="card-header bg-success" align="center">
+				<b class="text-white">Latest Letter</b>
+			</div>
+			<div class="card-body">
+				<ul class="list-unstyled">
+					{% for data in latest_docs %}
+						<li style="font-size: 0.8rem;"><a href="{% url 'detalukartatama' data.hashed %}"><i class="fa fa-angle-right"></i> {{data.nu_karta_tama}}</a></li>
+					{% endfor %}
+				</ul>
+				
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</section>
+
+<!-- doc tracker -->
+<!-- <div class="container-fluid" style="margin-top: -30px">
+    <div class="row">
+      <div class="col-lg-10">
+        <div class="card">
+          <div class="card-header bg-secondary text-center">Traker Karta Tama</div>
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <div class="col-md-3">
+                <div class="text-center border p-1">Administrasaun</div>
+                <div class="p-3 text-center border">
+                  {% if dokumentu.admin_viewed %}
+                  <span class="badge badge-info text-light">&#10003</span>
+                  {% else %}
+                  <span class="text-muted">&#10003</span>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="text-center border p-1">Prezidente</div>
+                <div class="p-3 text-center border">
+                  {% if dokumentu.president_viewed %}
+                  <span class="badge badge-info text-light">&#10003</span>
+                  {% else %}
+                  <span class="text-muted">&#10003</span>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="text-center border p-1">Diretor</div>
+                <div class="p-3 text-center border">
+                  {% if dokumentu.diretor_viewed %}
+                  <span class="badge badge-info text-light">&#10003</span>
+                  {% else %}
+                  <span class="text-muted">&#10003</span>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="text-center border p-1">Vogal</div>
+                <div class="p-3 text-center border">
+                  {% if dokumentu.vogal_viewed %}
+                  <span class="badge badge-info text-light">&#10003</span>
+                  {% else %}
+                  <span class="text-muted">&#10003</span>
+                  {% endif %}
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#" target="_blank" class="text-light bg-danger m-2 p-2">Generate File Despaxu</a>
+  </div> -->
+<!-- doc tracker -->
+
+
+		<script type="text/javascript">
+            $(document).ready(function () {
+              // action when dobleclick  
+              $(document).on("dblclick", ".editable", function () {
+                var value = $(this).text();
+                var input = "<input type='text' class='input-data form-control' value='"+value+"'>";
+                $(this).html(input);
+                $(this).removeClass("editable");
+              });
+
+              $(document).on("blur",".input-data",function () {
+                var value = $(this).val();
+                var p = $(this).parent("p");
+                $(this).remove();
+                p.html(value);
+                p.addClass("editable");
+                var type = p.data("type");
+                sendToServer(p.data("id"),value,type);
+              });
+              // remove editable bainhira hanehan enter
+              $(document).on("keypress",".input-data",function (e) {
+                var key = e.which;
+                if (key == 13) {
+                  var value = $(this).val();
+                  var p = $(this).parent("p");
+                  $(this).remove();
+                  p.html(value);
+                  p.addClass("editable");
+                  var type = p.data("type");
+                  sendToServer(p.data("id"),value,type);
+                }
+              });
+              // haruka data ba server ka database
+              function sendToServer(id,value,type) {
+                console.log(id);
+                console.log(value);
+                console.log(type);
+                var $doc  = $('.editable');
+                $.ajax({
+                  url:$doc.data("url"),
+                  type:"POST",
+                  data:{id:id,type:type,value:value},
+                })
+                .done(function(response) {
+                  console.log(response);
+                })
+                .fail(function(response) {
+                  console.log("Error Ocurred");
+                })
+              }
+
+            });
+        </script>
+{% endblock %}

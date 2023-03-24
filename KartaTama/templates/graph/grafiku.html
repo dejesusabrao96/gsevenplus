@@ -1,0 +1,48 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+<section class="charts">
+            <div class="container-fluid">
+              <div class="row">
+                <!-- Line Charts-->
+                <div class="col-lg-6">
+                  <div class="line-chart-example card">
+                    <div class="card-close">
+                     
+                    </div>
+                    <div class="card-header d-flex align-items-center">
+                      <h4 class="h4">Grafiku Karta Bazeia ba Kategoria</h4>
+                    </div>
+                    <div class="card-body">
+                      <div id="reportsChart1" data-url="#"></div>
+                    </div>
+                  </div>
+              
+                </div>
+                <div class="col-lg-6">
+                  <div class="line-chart-example card no-margin-bottom">
+                    <div class="card-close">
+                     
+                    </div>
+                    <div class="bar-chart has-shadow bg-white">
+                        <div class="card-header d-flex align-items-center">
+                          <h4 class="h4"><center>Grafiku Karta Bazeia ba Tinan</center></h4>
+                        </div>
+                        <div class="card-body">
+                          <div id="reportsChart2" data-url="#"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+          </section>
+
+<script src="{% static 'main/chart.js/chart.min.js' %}"></script>
+<script type="text/javascript">{% include 'chart-js/shartkartatama.js' %}</script>
+<script type="text/javascript">{% include 'chart-js/kartaTinan.js' %}</script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="{% static 'main/js/apexcharts.min.js' %}"></script>
+<script src="{% static 'Charts/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/echarts.min.js' %}"></script>
+{% endblock %}

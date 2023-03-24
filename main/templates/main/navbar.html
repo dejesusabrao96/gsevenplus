@@ -1,0 +1,19 @@
+{% load static %}
+<header class="site-header">
+	<nav class="navbar navbar-expand-md navbar-secundary bg-primary fixed-top" style="background: linear-gradient(to bottom,purple,#BF40BF);color: #BF40BF">
+		<a class="navbar-brand text-white" href="{% url 'index' %}">
+		<img src="{% static 'main/images/logo.jpg' %}" alt="Logo" style="width:40px;"> Group Of Seven Plus
+		</a> 
+		<button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon bg-dark"></span>
+		</button>
+		{% if user.is_authenticated %}
+			{% if user.groups.all.0.name == 'Admin' %}
+				{% include 'main/navbarAdmin.html' %}
+			{% elif user.groups.all.0.name == 'Chief' %}
+				{% include 'main/navbarChief.html' %}
+			{% endif %}
+		{% endif %}
+	</nav>
+</header>
+<hr/>

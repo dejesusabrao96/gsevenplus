@@ -1,0 +1,251 @@
+{% load static %}
+<div class="row">
+	<div class="col-sm-12">
+		<div class="card shadow-lg pt-3 rounded">
+			<div class="card-body">
+				<center>
+					<h2 class="font-weight-normal display-6 bg-info text-white p-1 mb-3" style="background: linear-gradient(to bottom,purple,#BF40BF);color: #BF40BF">Sistema Arkivamentu Karta g7+</h2>
+					<!-- <h3 class="font-weight-normal display-5">Sistema Arkivamentu Karta g7+</h3> -->
+					<!-- <h2>g7+</h2> -->
+					<hr>
+          <section>
+          <h4 class="text-center text-muted">Karta Tama</h4><hr>  
+          <div class="row">
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-4 mb-2">
+                            <div class="card border-left-primary shadow h-90 py-1">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Karta Tama</div>
+                                            <div class="h6 mb-0 font-weight-bold text-gray-800">Loron Ohin</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="number"><strong>{{today_docs}}</strong></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-4 mb-2">
+                            <div class="card border-left-success shadow h-90 py-1">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Karta Tama</div>
+                                            <div class="h6 mb-0 font-weight-bold text-gray-800">Fulan Agora</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="number"><strong>{{this_month_docs}}</strong></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-4 mb-2">
+                            <div class="card border-left-success shadow h-90 py-1">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Karta Tama</div>
+                                            <div class="h6 mb-0 font-weight-bold text-gray-800">Tinan Agora</div>
+                                        </div>
+                                        <div class="col-auto">
+                                          <div class="number"><strong>{{this_year_docs}}</strong></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pending Requests Card Example -->
+                        <div class="col-xl-3 col-md-4 mb-2">
+                            <div class="card border-left-warning shadow h-90 py-1">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                Total</div>
+
+                                            <div class="h6 mb-0 font-weight-bold text-gray-800">Karta Tama</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="number"><strong><a href="{% url 'listakartatama' %}">{{tot_docs}}</a></strong></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </section>
+                    <section>
+                <h4 class="text-center text-muted">Karta Sai</h4><hr>
+          <div class="row">
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-4 mb-2">
+                            <div class="card border-left-primary shadow h-90 py-1">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Karta Sai</div>
+                                            <div class="h6 mb-0 font-weight-bold text-gray-800">Loron Ohin</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="number"><strong>{{today_doc_sai}}</strong></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-4 mb-2">
+                            <div class="card border-left-success shadow h-90 py-1">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Karta Sai</div>
+                                            <div class="h6 mb-0 font-weight-bold text-gray-800">Fulan Agora</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="number"><strong>{{this_month_doc_sai}}</strong></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-4 mb-2">
+                            <div class="card border-left-success shadow h-90 py-1">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Karta Sai</div>
+                                            <div class="h6 mb-0 font-weight-bold text-gray-800">Tinan Agora</div>
+                                        </div>
+                                        <div class="col-auto">
+                                          <div class="number"><strong>{{this_year_doc_sai}}</strong></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pending Requests Card Example -->
+                        <div class="col-xl-3 col-md-4 mb-2">
+                            <div class="card border-left-warning shadow h-90 py-1">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                Total</div>
+
+                                            <div class="h6 mb-0 font-weight-bold text-gray-800">Karta Sai</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="number"><strong><a href="{% url 'listakartasai' %}">{{tot_doc_sai}}</a></strong></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </section>
+          <hr>
+<section class="charts">
+            <div class="container-fluid">
+              <div class="row">
+                <!-- Line Charts-->
+                <div class="col-lg-6">
+                  <div class="line-chart-example card">
+                    <div class="card-close">
+                     
+                    </div>
+                    <div class="card-header d-flex align-items-center">
+                      <h4 class="h4">Krafiku Karta Tuir Kategoria</h4>
+                    </div>
+                    <div class="card-body">
+                      <div id="reportsChart1" data-url="#"></div>
+                    </div>
+                  </div>
+              
+                </div>
+                <div class="col-lg-6">
+                  <div class="line-chart-example card no-margin-bottom">
+                    <div class="card-close">
+                     
+                    </div>
+                    <div class="bar-chart has-shadow bg-white">
+                        <div class="card-header d-flex align-items-center">
+                          <h4 class="h4"><center>Grafiku Karta Tuir Tinan</center></h4>
+                        </div>
+                        <div class="card-body">
+                          <div id="reportsChart2" data-url="#"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+          </section>
+
+         <section class="row">
+            <div class="container-fluid">
+              <div class="row">
+                <!-- Statistics -->
+                <div class="statistics col-lg-6 col-12">
+                  <h4 class="text-center text-muted">Kategoria Karta Tama</h4><hr>
+                  {% for cat in queryset_categorytama %} 
+                  <div cla>
+                  <a href="{% url 'kategoriakartatama' cat.kategoria_karta_tama__hashed %}">
+                  <div class="statistic d-flex align-items-center bg-white has-shadow">
+                     <div class="icon bg-red"></div>
+                    <div class="btn btn-outline-info btn-sm mr-1 mt-2"><h6>Karta {{cat.kategoria_karta_tama__naran_kategoria}}</h6><b>Total:</b> <small><b>{{cat.count}} {% if cat.count > 1 %}{% else %}{% endif %}</small></b></div>
+                  </div>
+                </div>
+                </a>
+                  {% endfor %}
+                </div>
+          
+               <div class="statistics col-lg-6 col-12">
+                  <h4 class="text-center text-muted">Kategoria Karta Sai</h4><hr>
+                  {% for cat in queryset_categorysai %} 
+                  <a href="{% url 'kategoriakartasai' cat.kategoria_karta_sai__hashed %}">
+                  <div class="statistic d-flex align-items-center bg-white has-shadow">
+                     <div class="icon bg-red"></div>
+                    <div class="btn btn-outline-info btn-sm mr-1 mt-2"><h6>Karta {{cat.kategoria_karta_sai__naran_kategoria}}</h6><b>Total:</b> <small><b>{{cat.count}} {% if cat.count > 1 %}{% else %}{% endif %}</small></b></div>
+                  </div>
+                </a>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </section>
+            
+</center>
+</div>
+</div>
+</div>
+</div>
+<!-- Charts-->
+<!-- Import Chart Karta Tama no Sai Script -->
+<script src="{% static 'main/chart.js/chart.min.js' %}"></script>
+<script type="text/javascript">{% include 'chart-js/shartkartatama.js' %}</script>
+<script type="text/javascript">{% include 'chart-js/kartaTinan.js' %}</script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="{% static 'main/js/apexcharts.min.js' %}"></script>
+<script src="{% static 'Charts/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/echarts.min.js' %}"></script>
